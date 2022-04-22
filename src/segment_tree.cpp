@@ -1,5 +1,6 @@
 #include "segment_tree.hpp"
 #include "iostream"
+#include "climits"
 
 // файл с определениями
 
@@ -53,6 +54,21 @@ namespace itis {
     }
   }
 
+  void SegmentTree::assign(int l, int r, int value, int vertex, int lp, int rp) {
+    if (l > lp && r <= rp) {
+      modification_[vertex] = value;
+      SegmentTree::push_back_(vertex);
+      return;
+    }
+    if (rp < l || r < lp) { return; }
+
+    SegmentTree::push_back_(vertex);
+    int tm = (l + r) / 2;
+    SegmentTree::assign(l, tm, value, vertex * 2, lp, rp);
+    SegmentTree::assign(tm + 1, r, value, vertex * 2 + 1, lp, rp);
+    tree_[vertex] = tree_[vertex * 2] + tree_[vertex * 2 + 1];
+  }
+
   int SegmentTree::get_min(int l, int r, int vertex, int lp, int rp) {
     push_back_(vertex);
     if ((l <= lp && rp <= r) && (lp == rp)) { return tree_[lp]; }
@@ -81,14 +97,17 @@ namespace itis {
            get_sum(vertex * 2 + 1,tm + 1, tr, (lp > tm + 1) ? lp : tm + 1, rp);
   }
 
-//  void SegmentTree::update(int vertex, int lp, int rp, int idx, int value) {
-//    push_back_(vertex);
-//    if (lp == rp) { tree_[vertex] = value; }
-//    else {
-//      int tm = (lp + rp) / 2;
-//      if (index <= tm) { update(vertex * 2, lp, tm, index, value) }
-//    }
-//  }
+  void SegmentTree::update(int vertex, int lp, int rp, int idx, int value) {
+    push_back_(vertex);
+    if (lp == rp) { tree_[vertex] = value; }
+    else {
+      int tm = (lp + rp) / 2;
+      if (idx <= tm) { update(vertex * 2, lp, tm, idx, value); }
+      else { update(vertex * 2 + 1, tm, rp, idx, value); }
+
+      tree_[vertex] = tree_[vertex * 2] + tree_[vertex * 2 + 1];
+    }
+  }
 
   int SegmentTree::size() const {
     return size_;
