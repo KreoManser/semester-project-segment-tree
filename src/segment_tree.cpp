@@ -1,4 +1,4 @@
-#include "data_structure.hpp"
+#include "segment_tree.hpp"
 
 // файл с определениями
 
@@ -37,7 +37,5 @@ namespace itis {
       size_ = 0;
     }
   }
-
-  ~SegmentTree();
 
 }  // namespace itis
