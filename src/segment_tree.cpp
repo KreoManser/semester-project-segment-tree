@@ -38,4 +38,8 @@ namespace itis {
     }
   }
 
+  int SegmentTree::size() const {
+    return size_;
+  }
+
 }  // namespace itis
