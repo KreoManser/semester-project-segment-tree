@@ -167,11 +167,11 @@ _Опишите, как запустить контрольные тесты, ч
 ## Источники
 
 _Список использованных при реализации структуры данных источников._
-_`https://habr.com/ru/company/otus/blog/485194/
-https://algorithmica.org/ru/segtree
-https://e-maxx.ru/algo/segment_tree
-https://en.wikipedia.org/wiki/Segment_tree
-https://ejudge.lksh.ru/archive/2015/08/B/lectures/segments-tree.ru.pdf
-https://proglib.io/p/algoritmy-i-struktury-dannyh-na-c-derevya-otrezkov-2019-10-11`_
+- _`https://habr.com/ru/company/otus/blog/485194/`_
+- _`https://algorithmica.org/ru/segtree`_
+- _`https://e-maxx.ru/algo/segment_tree`_
+- _`https://en.wikipedia.org/wiki/Segment_tree`_
+- _`https://ejudge.lksh.ru/archive/2015/08/B/lectures/segments-tree.ru.pdf`_
+- _`https://proglib.io/p/algoritmy-i-struktury-dannyh-na-c-derevya-otrezkov-2019-10-11`_
 
 _**Это не плагиат, это уважение чужого труда и помощь своим сокурсникам более подробно разобраться в теме.**_
